@@ -1,56 +1,47 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  tiposDeDados();
-  estruturasDeControle();
-  helloWorld('Eduardo');
-  ehPar(2);
-  listasEMapas();
+  tiposVariaveis();
+  maiorIdade(21);
+  apresentarAluno('Eduardo', 21, true);
+  MapsEList();
   runApp(const MyApp());
 }
 
-void tiposDeDados() {
-  int idade = 25;
-  double altura = 1.80;
+void tiposVariaveis() {
   String nome = "Eduardo";
-  bool ativo = true;
+  int idade = 21;
+  double altura = 1.66;
+  bool estudaFlutter = true;
 
-  print('--- Tipos de Dados ---');
-  print('idade: $idade');
-  print('altura: $altura');
-  print('nome: $nome');
-  print('ativo: $ativo');
+  print('---- Variaveis ----');
+  print('Nome: $nome');
+  print('Idade: $idade');
+  print('Altura: $altura');
+  print('Estuda Flutter: $estudaFlutter');
 }
 
-void estruturasDeControle() {
-  int idade = 17;
-
-  print('---- Estruturas de Controle ---');
+void maiorIdade(int idade) {
   if (idade >= 18) {
-    print('Maior de idade.');
+    print('Maior de idade');
   } else {
-    print('Menor de idade.');
+    print('Menor de idade');
   }
 }
 
-String helloWorld(String nome) {
-  return "Olá, $nome!";
+void apresentarAluno(String nome, int idade, bool estudaFlutter) {
+  print(
+    'Olá, meu nome é $nome, tenho $idade anos e estou aprendendo Flutter: $estudaFlutter',
+  );
 }
 
-bool ehPar(int numero) {
-  return numero % 2 == 0;
-}
+void MapsEList() {
+  List<String> linguagens = ['Java', 'Python', 'Angular'];
+  linguagens.forEach((linguagens) => print('As linguagens são: $linguagens'));
 
-void listasEMapas() {
-  print('--- Listas e Mapas ---');
-
-  List<int> numeros = [1, 2, 3];
-  numeros.forEach((numero) => print("Numero é: $numero"));
-
-  Map<String, String> capital = {"Brasil": "Brasília", "França": "Paris"};
-
-  capital.forEach((pais, cidade) {
-    print('A capital de $pais é $cidade');
+  Map<String, int> estudo = {'Java': 40, 'Python': 50, 'Angular': 30};
+  estudo.forEach((materia, horas) {
+    print('Materia: $materia com $horas horas de estudo');
   });
 }
 
