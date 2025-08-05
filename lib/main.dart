@@ -1,48 +1,8 @@
+import 'package:aula1/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  tiposVariaveis();
-  maiorIdade(21);
-  apresentarAluno('Eduardo', 21, true);
-  MapsEList();
   runApp(const MyApp());
-}
-
-void tiposVariaveis() {
-  String nome = "Eduardo";
-  int idade = 21;
-  double altura = 1.66;
-  bool estudaFlutter = true;
-
-  print('---- Variaveis ----');
-  print('Nome: $nome');
-  print('Idade: $idade');
-  print('Altura: $altura');
-  print('Estuda Flutter: $estudaFlutter');
-}
-
-void maiorIdade(int idade) {
-  if (idade >= 18) {
-    print('Maior de idade');
-  } else {
-    print('Menor de idade');
-  }
-}
-
-void apresentarAluno(String nome, int idade, bool estudaFlutter) {
-  print(
-    'Olá, meu nome é $nome, tenho $idade anos e estou aprendendo Flutter: $estudaFlutter',
-  );
-}
-
-void MapsEList() {
-  List<String> linguagens = ['Java', 'Python', 'Angular'];
-  linguagens.forEach((linguagens) => print('As linguagens são: $linguagens'));
-
-  Map<String, int> estudo = {'Java': 40, 'Python': 50, 'Angular': 30};
-  estudo.forEach((materia, horas) {
-    print('Materia: $materia com $horas horas de estudo');
-  });
 }
 
 class MyApp extends StatelessWidget {
@@ -51,28 +11,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+    return const MaterialApp(title: 'Meu primeiro App', home: HomePage());
   }
 }
 
