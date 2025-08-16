@@ -1,4 +1,5 @@
-import 'package:aula1/widgets/custom_button.dart';
+import 'package:aula1/app.routes.dart';
+import 'package:aula1/widgets/welcome_text.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,21 +7,14 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            width: 200, // Largura desejada
-            height: 60, // Altura desejada
-            child: CustomButton(
-              onPress: () {
-                print('Pressionou o botão');
-              },
-              textMessageButton: 'Pressione o botão',
-            ),
-          ),
-        ],
+    return Scaffold(
+      appBar: AppBar(title: const Text('Bem-vindo ao Flutter')),
+      body: const Center(child: WelcomeText()),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, AppRoutes.detalhes);
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
