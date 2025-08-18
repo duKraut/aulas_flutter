@@ -14,7 +14,7 @@ class DetalhePage extends StatelessWidget {
           children: [
             Center(
               child: Image.network(
-                'https://img.freepik.com/vetores-gratis/meme-quadrado-de-gato-vibrante-simples_742173-4493.jpg?semt=ais_hybrid&w=740&q=80',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPSaVmWeceM0PVKdcaR8P1sOAO8T677hLS8A&s',
               ),
             ),
             SizedBox(height: 16),
