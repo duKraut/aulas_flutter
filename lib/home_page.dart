@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       body: const Center(child: WelcomeText()),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, AppRoutes.detalhes);
+          Navigator.pushNamed(context, AppRoutes.cadastro);
         },
         child: const Icon(Icons.add),
       ),

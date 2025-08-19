@@ -8,11 +8,18 @@ class CadastroPage extends StatefulWidget {
 }
 
 class _CadastroPageState extends State<CadastroPage> {
-  final _formKey = GlobalKey < FormState();
+  final _formKey = GlobalKey<FormState>();
 
   String nome = '';
   String email = '';
   String senha = '';
+
+  void _mostrarDados() {
+    print("Dados Cadastrados:");
+    print("Nome: $nome");
+    print("E-mail: $email");
+    print("Senha: $senha");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +50,26 @@ class _CadastroPageState extends State<CadastroPage> {
                 onSaved: (value) => senha = value ?? '',
                 validator: (value) =>
                     value!.length < 6 ? "Minimo de 6 caracteres" : null,
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.purple,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 12,
+                  ),
+                ),
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    _formKey.currentState!.save();
+                    _mostrarDados();
+                  }
+                },
+                child: const Text("Cadastrar", style: TextStyle(fontSize: 18)),
               ),
             ],
           ),
